@@ -1,9 +1,10 @@
-<!DOCTYPE html><html manifest="ZYdemo.appcache"><head><title>¡¾ĞÇÆÚ¼¸¡¿[È«×ÛÒÕ]</title></head>
+ï»¿<!DOCTYPE html><html manifest="ZYdemo.appcache"><head>
+<meta charset="UTF-8"><title>ã€æ˜ŸæœŸå‡ ã€‘[å…¨ç»¼è‰º]</title></head>
 <body bgcolor="black">
     <div id="list"></div>
     <div>
-        <textarea style="width: 93%;" rows="3">"1Ãû³Æ","2Ãû³Æ","ÒÔ´ËÀàÍÆ","°ë½ÇË«ÒıºÅÒı×Å²¢°ë½Ç¶ººÅ¸ô¿ª"</textarea>
-        <button style="width: 5%;">±£´æ</button>
+        <textarea style="width: 93%;" rows="3">"5ä¸­å›½å¥½å£°éŸ³","1åç§°","2åç§°","ä»¥æ­¤ç±»æ¨","åŠè§’åŒå¼•å·å¼•ç€å¹¶åŠè§’é€—å·éš”å¼€"</textarea>
+        <button style="width: 5%;">ä¿å­˜</button>
     </div>
 </body>
 <script src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js"></script>
@@ -15,7 +16,7 @@ $(document).ready(function(){
             }
             var zyj = JSON.parse("[" + zy + "]");
             for (var i = 0; i < zyj.length; i++) {
-                $("div#list").append('<div class="flip">¡¾'+zyj[i].substring(0,1)+'¡¿<a href="#">'+zyj[i].substring(1)+'</a><div class="panel"><iframe src="" height="99%" width="99%"></iframe></div></div>');
+                $("div#list").append('<div class="flip">ã€'+zyj[i].substring(0,1)+'ã€‘<a href="#">'+zyj[i].substring(1)+'</a><div class="panel"><iframe src="" height="99%" width="99%"></iframe></div></div>');
             }
 	$(".flip").each(function() {
 		$(this).click(function(){
@@ -35,7 +36,7 @@ $(document).ready(function(){
    			// var s=myDate.getSeconds();
    			// var now=year+'-'+p(month)+"-"+p(date)+" "+p(h)+':'+p(m);
    			// var txt = $(this).text();
-   			// localStorage.lastsee=txt+"¡¾"+now+"¡¿";
+   			// localStorage.lastsee=txt+"ã€"+now+"ã€‘";
    			//$("div#list").append(localStorage.lastsee);
  		 });
 	 });
@@ -45,7 +46,7 @@ $("button").click(function () {
                 localStorage.setItem("zy", $("textarea").val());
                 window.location.reload();
             } else {
-                alert("±§Ç¸£¡ÄúµÄä¯ÀÀÆ÷²»Ö§³Ö Web Storage ...");
+                alert("æŠ±æ­‰ï¼æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒ Web Storage ...");
             }
 });
 </script><style type="text/css"> 
