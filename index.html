@@ -45,6 +45,7 @@ $("button").click(function () {
             if (typeof (Storage) !== "undefined") {
                 localStorage.setItem("zy", $("textarea").val());
                 window.location.reload();
+                alert("OK...");
             } else {
                 alert("抱歉！您的浏览器不支持 Web Storage ...");
             }
