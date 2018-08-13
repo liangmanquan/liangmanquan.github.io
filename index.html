@@ -1,8 +1,13 @@
 ﻿<!DOCTYPE html><html manifest="ZYdemo.appcache"><head>
-<title>【全综艺】[星期名称组合]</title>
+<title>【全综艺】[星期名称,组合]</title>
 <script src="./jquery.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
+            if (typeof (Storage) !== "undefined") {
+                alert("Wellcome...");
+            } else {
+                alert("抱歉！您的浏览器不支持 Web Storage ...");
+            }
             var zy = localStorage.getItem("zy");
             if (zy.length > 0) {
                 $("textarea").val(zy);
