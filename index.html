@@ -1,13 +1,17 @@
-﻿<!DOCTYPE html><html manifest="ZYdemo.appcache"><head>
+﻿<!DOCTYPE html><html><head>
 <title>【全综艺】[星期名称,组合]</title>
 <script src="./jquery.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
+	$("button").click(function () {
             if (typeof (Storage) !== "undefined") {
-                alert("Wellcome...");
+                localStorage.setItem("zy", $("textarea").val());
+                window.location.reload();
+                alert("OK...");
             } else {
                 alert("抱歉！您的浏览器不支持 Web Storage ...");
             }
+	 });
             var zy = localStorage.getItem("zy");
             if (zy.length > 0) {
                 $("textarea").val(zy);
@@ -37,15 +41,6 @@ $(document).ready(function(){
    			// localStorage.lastsee=txt+"【"+now+"】";
    			//$("div#list").append(localStorage.lastsee);
  		 });
-	 });
-$("button").click(function () {
-            if (typeof (Storage) !== "undefined") {
-                localStorage.setItem("zy", $("textarea").val());
-                window.location.reload();
-                alert("OK...");
-            } else {
-                alert("抱歉！您的浏览器不支持 Web Storage ...");
-            }
 	 });
 });
 </script><style type="text/css"> 
