@@ -7,7 +7,8 @@ $(document).ready(function(){
             if (typeof (Storage) !== "undefined") {
                 localStorage.setItem("zy", $("textarea").val());
                 window.location.reload();
-                alert("OK...");
+                alert("OK，请刷新页面...");
+                window.location.reload();
             } else {
                 alert("抱歉！您的浏览器不支持 Web Storage ...");
             }
@@ -23,7 +24,7 @@ $(document).ready(function(){
 	$(".flip").each(function() {
 		$(this).click(function(){
    			 $("iframe").attr("src","");
-   			 $(this).children("div").children("iframe").attr("src","http://so.iqiyi.com/so/q_"+$(this).children("a").text());
+   			 $(this).children("div").children("iframe").attr("src","https://so.iqiyi.com/so/q_"+$(this).children("a").text());
 			 $(".panel").slideUp();
 			 $(".flip").css({"color":"black","border":"solid 1px"});
    			 $(this).children("div").slideDown();
