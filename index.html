@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html><html><head>
-<title>【全综艺】[星期名称,组合]</title>
+<title>【全追剧神器】[星期名称,组合]</title>
 <script src="./jquery.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
 	$("button").click(function () {
             if (typeof (Storage) !== "undefined") {
                 localStorage.setItem("zy", $("textarea").val());
-                window.location.reload();
-                alert("OK，请刷新页面...");
+                alert("OK，将刷新页面...");
                 window.location.reload();
             } else {
                 alert("抱歉！您的浏览器不支持 Web Storage ...");
@@ -17,7 +16,7 @@ $(document).ready(function(){
             if (zy.length > 0) {
                 $("textarea").val(zy);
             }
-            var zyj = JSON.parse("[" + zy + "]");
+            var zyj = JSON.parse("[\"" + zy.replace(/,/g, "\",\"") + "\"]");
             for (var i = 0; i < zyj.length; i++) {
                 $("div#list").append('<div class="flip">【'+zyj[i].substring(0,1)+'】<a href="#">'+zyj[i].substring(1)+'</a><div class="panel"><iframe src="" height="99%" width="99%"></iframe></div></div>');
             }
@@ -54,7 +53,7 @@ div.panel{height:480px;display:none;}
 <body bgcolor="black">
     <div id="list"></div>
     <div>
-        <textarea style="width: 93%;" rows="3">"5中国好声音","1名称","2名称","以此类推","半角双引号引着并半角逗号隔开"</textarea>
+        <textarea style="width: 93%;" rows="3">5中国好声音,1名称,2名称,以此类推以半角逗号隔开</textarea>
         <button style="width: 5%;">保存</button>
     </div>
 </body></html>
